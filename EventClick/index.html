@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Click</title>
+    <style>
+      html, body{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #c1, #c2, #c3{
+        padding:20px;
+        border:1px solid #fff;
+        color:#fff;
+        margin:20px 0;
+      }
+      #c1{
+        background-color: #ff9900;
+        margin:0;
+      }
+      #c2{
+        background-color: #ff6600;
+      }
+      #c3{
+        background-color: #ff3300;
+      }
+    </style>
+</head>
+<body>
+    <!--Content-->
+    <div id="c1"> c1
+      <div id="c2"> c2
+        <div id="c3"> c3 </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+        var c1 = document.getElementById("c1");
+        var c2 = document.getElementById("c2");
+        var c3 = document.getElementById("c3");
+
+        c1.addEventListener('click',function(){console.log('%c c1:bubble 1 ', 'color:#ff9900; background-color:#ccc;');},false);
+        c1.addEventListener('click',function(){console.log('%c c1:capture 1 ', 'color:#ff9900;');},true);
+        c1.addEventListener('click',function(){console.log('%c c1:bubble 2 ', 'color:#ff9900; background-color:#ccc;');},false);
+        c1.addEventListener('click',function(){console.log('%c c1:capture 2 ', 'color:#ff9900;');},true);
+        c1.addEventListener('click',function(){console.log('%c c1:bubble 3 ', 'color:#ff9900; background-color:#ccc;');},false);
+        c1.addEventListener('click',function(){console.log('%c c1:capture 3 ', 'color:#ff9900;');},true);
+
+        c2.addEventListener('click',function(){console.log('%c c2:bubble 1 ', 'color:#ff6600; background-color:#ccc;');},false);
+        c2.addEventListener('click',function(){console.log('%c c2:capture 1 ', 'color:#ff6600;');},true);
+        c2.addEventListener('click',function(){console.log('%c c2:bubble 2 ', 'color:#ff6600; background-color:#ccc;');},false);
+        c2.addEventListener('click',function(){console.log('%c c2:capture 2 ', 'color:#ff6600;');},true);
+        c2.addEventListener('click',function(){console.log('%c c2:bubble 3 ', 'color:#ff6600; background-color:#ccc;');},false);
+        c2.addEventListener('click',function(){console.log('%c c2:capture 3 ', 'color:#ff6600;');},true);
+
+        c3.addEventListener('click',function(){console.log('%c c3:bubble 1 ', 'color:#ff3300; background-color:#ccc;');},false);
+        c3.addEventListener('click',function(){console.log('%c c3:capture 1 ', 'color:#ff3300;');},true);
+        c3.addEventListener('click',function(){console.log('%c c3:bubble 2 ', 'color:#ff3300; background-color:#ccc;');},false);
+        c3.addEventListener('click',function(){console.log('%c c3:capture 2 ', 'color:#ff3300;');},true);
+        c3.addEventListener('click',function(){console.log('%c c3:bubble 3 ', 'color:#ff3300; background-color:#ccc;');},false);
+        c3.addEventListener('click',function(){console.log('%c c3:capture 3 ', 'color:#ff3300;');},true);
+
+
+
+
+    </script>
+</body>
+</html>
